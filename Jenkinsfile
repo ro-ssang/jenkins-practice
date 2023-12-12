@@ -1,7 +1,9 @@
 pipeline {
-    agent { docker { image 'node:20.10.0-alpine3.19' } }
+    agent any
+    
     stages {
         stage('build') {
+            agent { docker { image 'node' } }
             steps {
                 sh 'node --version'
             }
